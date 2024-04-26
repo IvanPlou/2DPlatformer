@@ -122,7 +122,7 @@ public abstract class BaseUnit : MonoBehaviour
     // check for the ground from character position and offset
     private bool GroundCheck(float offset)
     {
-        Vector2 originPosition = _raycastOrigin.position;
+        Vector3 originPosition = _raycastOrigin.position;
 
         originPosition.x += offset;
 
@@ -139,6 +139,6 @@ public abstract class BaseUnit : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //TODO: reset jump count if collision object is on ground layer
+        if (other.gameObject.layer  == _groundLayer) { _currentJumps = 0; }
     }
 }

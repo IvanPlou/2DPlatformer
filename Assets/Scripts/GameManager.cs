@@ -36,8 +36,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetScore()
-    { return _score; }
+    public int GetScore()  { return _score; }
 
     public void PlayerDeath()
     {

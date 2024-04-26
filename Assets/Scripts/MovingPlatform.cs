@@ -35,7 +35,7 @@ public class MovingPlatform : MonoBehaviour
     {
         float totalDuration = Vector3.Distance(_startPosition, _endPosition) / _moveSpeed;
         float direction = movingBack? -1 : 1;
-        _rb.velocity = (_endPosition - _startPosition).normalized * _moveSpeed * direction;
+        _rb.velocity = _moveSpeed * direction * (_endPosition - _startPosition).normalized;
         yield return new WaitForSeconds(totalDuration);
         _rb.velocity = Vector2.zero;
     }
